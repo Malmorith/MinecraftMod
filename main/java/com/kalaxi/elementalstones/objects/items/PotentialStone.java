@@ -29,7 +29,6 @@ public ActionResultType onItemUse(ItemUseContext context)
 	
 	//Fire stone
 	if(
-		(!world.isRemote) && 
 		(!player.isInWater()) &&
 		(world.getBlockState(pos).getBlock() == Blocks.MAGMA_BLOCK)
 	  )
@@ -42,7 +41,6 @@ public ActionResultType onItemUse(ItemUseContext context)
 		}
 	//Earth stone
 	if(
-	   (!world.isRemote) && 
 	   (!player.isInWater()) &&
 	   (world.getBlockState(pos).getBlock() == Blocks.BEDROCK)
 	  )
