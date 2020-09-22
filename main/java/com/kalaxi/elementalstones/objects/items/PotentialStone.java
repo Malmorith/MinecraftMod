@@ -7,7 +7,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -28,7 +30,7 @@ public ActionResultType onItemUse(ItemUseContext context)
 	PlayerEntity player = context.getPlayer();
 	
 	//Fire stone
-	if(
+	if( 
 		(!player.isInWater()) &&
 		(world.getBlockState(pos).getBlock() == Blocks.MAGMA_BLOCK)
 	  )
@@ -55,4 +57,34 @@ public ActionResultType onItemUse(ItemUseContext context)
 	
 	}
 	
+@Override
+public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) 
+	{
+		ItemStack itemStack = playerIn.getHeldItem(handIn);
+		
+		
+		if(
+			(playerIn.getSubmergedHeight() > 0)	
+		  )
+		{
+			playerIn.inventory.addItemStackToInventory(new ItemStack(ItemInit.water_stone));
+			if (!playerIn.abilities.isCreativeMode)
+			{
+		         itemStack.shrink(1);
+		    }
+		}
+		
+		if(
+			(playerIn.getPosY() >= 120) &&
+			(!playerIn.isInWater())
+		  )
+			{
+				playerIn.inventory.addItemStackToInventory(new ItemStack(ItemInit.air_stone));
+				if (!playerIn.abilities.isCreativeMode)
+				{
+			         itemStack.shrink(1);
+			    }
+			}
+		return super.onItemRightClick(worldIn, playerIn, handIn);
+	}	
 }
