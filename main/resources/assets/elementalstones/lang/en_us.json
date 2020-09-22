@@ -1,0 +1,13 @@
+{
+	"item.elementalstones.fire_stone": "Fire Stone",
+	"item.elementalstones.earth_stone": "Earth Stone",
+	"item.elementalstones.water_stone": "Water Stone",
+	"item.elementalstones.air_stone": "Air Stone",
+
+
+	"item.elementalstones.potential_stone": "Potential Stone",
+	
+	"block.elementalstones.potential_ore": "Potential Ore",
+	
+	"itemGroup.elementalstonestab": "Elemental Stones"
+}
