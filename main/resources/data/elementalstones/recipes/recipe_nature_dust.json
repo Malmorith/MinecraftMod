@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "elementalstones:mortar_pestle"
+    },
+    {
+      "item": "elementalstones:earth_dust"
+    },
+    {
+      "item": "elementalstones:water_dust"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "result": {
+    "item": "elementalstones:nature_dust"
+  }
+}

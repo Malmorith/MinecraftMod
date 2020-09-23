@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "elementalstones:lightning_dust"
+  },
+  "result": "elementalstones:lightning_stone",
+  "experience": 0.0,
+  "cookingtime": 200
+}

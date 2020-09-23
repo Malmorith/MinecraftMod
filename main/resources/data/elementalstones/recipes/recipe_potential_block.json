@@ -1,0 +1,19 @@
+{
+  "group": "elementalstones",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    "ppp",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "item": "elementalstones:potential_stone"
+    }
+  },
+  "result": 
+  {
+    "item": "elementalstones:potential_block",
+    "count": 1
+  }
+}

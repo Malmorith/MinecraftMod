@@ -3,11 +3,31 @@
 	"item.elementalstones.earth_stone": "Earth Stone",
 	"item.elementalstones.water_stone": "Water Stone",
 	"item.elementalstones.air_stone": "Air Stone",
+	"item.elementalstones.lightning_stone": "Lightning Stone",
+	"item.elementalstones.light_stone": "Light Stone",
+	"item.elementalstones.void_stone": "Void Stone",
+	"item.elementalstones.nature_stone": "Nature Stone",
+
+	"item.elementalstones.fire_dust": "Fire Dust",
+	"item.elementalstones.earth_dust": "Earth Dust",
+	"item.elementalstones.water_dust": "Water Dust",
+	"item.elementalstones.air_dust": "Air Dust",
+	"item.elementalstones.lightning_dust": "Lightning Dust",
+	"item.elementalstones.light_dust": "Light Dust",
+	"item.elementalstones.void_dust": "Void Dust",
+	"item.elementalstones.nature_dust": "Nature Dust",
+
+	"item.elementalstones.mortar_pestle": "Potential Stone Mortar & Pestle",
 
 
 	"item.elementalstones.potential_stone": "Potential Stone",
 	
 	"block.elementalstones.potential_ore": "Potential Ore",
+	"block.elementalstones.potential_block": "Potential Stone Block",
+	"block.elementalstones.potential_block_fire": "Engraved Potential Stone Block (Fire)",
+	"block.elementalstones.potential_block_earth": "Engraved Potential Stone Block (Earth)",
+	"block.elementalstones.potential_block_water": "Engraved Potential Stone Block (Water)",
+	"block.elementalstones.potential_block_air": "Engraved Potential Stone Block (Air)",
 	
 	"itemGroup.elementalstonestab": "Elemental Stones"
 }

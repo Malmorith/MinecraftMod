@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "elementalstones:earth_dust"
+  },
+  "result": "elementalstones:earth_stone",
+  "experience": 0.0,
+  "cookingtime": 200
+}
