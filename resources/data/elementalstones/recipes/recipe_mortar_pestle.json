@@ -1,0 +1,21 @@
+{
+  "group": "elementalstones",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "psp",
+    " p "
+  ],
+  "key": {
+    "p": {
+      "item": "elementalstones:potential_stone"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": 
+  {
+    "item": "elementalstones:mortar_pestle",
+    "count": 1
+  }
+}

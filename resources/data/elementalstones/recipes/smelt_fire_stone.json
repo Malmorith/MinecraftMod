@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "elementalstones:fire_dust"
+  },
+  "result": "elementalstones:fire_stone",
+  "experience": 0.0,
+  "cookingtime": 200
+}
