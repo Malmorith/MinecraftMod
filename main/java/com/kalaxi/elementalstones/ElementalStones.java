@@ -1,6 +1,7 @@
 package com.kalaxi.elementalstones;
 
 import com.kalaxi.elementalstones.init.ItemInit;
+import com.kalaxi.elementalstones.world.gen.PotentialOreGen;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -8,13 +9,16 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("elementalstones")
+@Mod.EventBusSubscriber(modid = ElementalStones.MOD_ID, bus = Bus.MOD)
 public class ElementalStones
 
 {
@@ -25,6 +29,9 @@ public class ElementalStones
     {
     	final IEventBus modEventBus =  FMLJavaModLoadingContext.get().getModEventBus();
     		modEventBus.addListener(this::setup);
+    		
+    		
+    		
     		modEventBus.addListener(this::doClientStuff);
         
         instance = this;
@@ -42,12 +49,20 @@ public class ElementalStones
     {
         // do something that can only be done on the client
     }
-
+    
+   // private void onEnqueueIMC(InterModEnqueueEvent event) {
+   // }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) 
     {
         // do something when the server starts
+    }
+    
+    @SubscribeEvent
+    public static void loadCompleteEvent(FMLLoadCompleteEvent event) 
+    {
+    	PotentialOreGen.generateOre();
     }
 
     public static class ElementalStonesItemGroup extends ItemGroup 

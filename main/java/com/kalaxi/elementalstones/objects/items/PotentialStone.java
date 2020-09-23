@@ -3,6 +3,8 @@ package com.kalaxi.elementalstones.objects.items;
 import com.kalaxi.elementalstones.init.ItemInit;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -40,6 +42,7 @@ public ActionResultType onItemUse(ItemUseContext context)
 			{
 		         itemStack.shrink(1);
 		    }
+			return ActionResultType.SUCCESS;
 		}
 	//Earth stone
 	if(
@@ -52,16 +55,27 @@ public ActionResultType onItemUse(ItemUseContext context)
 			{
 		         itemStack.shrink(1);
 		    }
-		}	
-	return super.onItemUse(context);
-	
+			return ActionResultType.SUCCESS;
+		}
+	if(
+		(!player.isInWater()) &&
+		(world.getBlockState(pos).getBlock() == Blocks.SUNFLOWER)
+	  )
+		{
+			player.inventory.addItemStackToInventory(new ItemStack(ItemInit.light_stone));
+			if (!player.abilities.isCreativeMode)
+			{
+				 itemStack.shrink(1);
+			}
+				return ActionResultType.SUCCESS;
+		}
+		return super.onItemUse(context);
 	}
-	
+
 @Override
 public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) 
 	{
 		ItemStack itemStack = playerIn.getHeldItem(handIn);
-		
 		
 		if(
 			(playerIn.getSubmergedHeight() > 0)	
@@ -86,5 +100,19 @@ public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity play
 			    }
 			}
 		return super.onItemRightClick(worldIn, playerIn, handIn);
-	}	
+	}
+@Override
+public boolean onLeftClickEntity(ItemStack stack, PlayerEntity player, Entity entity) 
+	{ 
+		if((entity instanceof EndermanEntity) == true) 
+			{
+				player.inventory.addItemStackToInventory(new ItemStack(ItemInit.void_stone));
+				if (!player.abilities.isCreativeMode)
+					{
+						stack.shrink(1);
+					}
+			}
+		return super.onLeftClickEntity(stack, player, entity);
+	}
+
 }
